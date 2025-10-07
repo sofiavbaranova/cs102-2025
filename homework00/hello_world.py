@@ -1,2 +1,6 @@
+"""Модуль hello_world: содержит функцию text, возвращающую строку 'message'."""
+
+
 def text():
-    return message
+    """Возвращает постоянную строку 'message'."""
+    return "message"
