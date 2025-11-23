@@ -1,3 +1,12 @@
+"""
+Caesar cipher module.
+Provides functions to encrypt and decrypt text using a simple Caesar cipher.
+"""
+
+# Количество букв в английском алфавите:
+ALPHABET_SIZE = ord("Z") - ord("A") + 1
+
+
 def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     """
     Encrypts plaintext using a Caesar cipher.
@@ -11,7 +20,13 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     ''
     """
     ciphertext = ""
-    # PUT YOUR CODE HERE
+    for ch in plaintext:
+        if "A" <= ch <= "Z":
+            ciphertext += chr((ord(ch) - ord("A") + shift) % ALPHABET_SIZE + ord("A"))
+        elif "a" <= ch <= "z":
+            ciphertext += chr((ord(ch) - ord("a") + shift) % ALPHABET_SIZE + ord("a"))
+        else:
+            ciphertext += ch
     return ciphertext
 
 
@@ -28,5 +43,11 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
     ''
     """
     plaintext = ""
-    # PUT YOUR CODE HERE
+    for ch in ciphertext:
+        if "A" <= ch <= "Z":
+            plaintext += chr((ord(ch) - ord("A") - shift) % ALPHABET_SIZE + ord("A"))
+        elif "a" <= ch <= "z":
+            plaintext += chr((ord(ch) - ord("a") - shift) % ALPHABET_SIZE + ord("a"))
+        else:
+            plaintext += ch
     return plaintext
