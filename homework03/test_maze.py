@@ -1,8 +1,9 @@
 import unittest
 from random import seed
-import maze
 
+import maze
 import pandas as pd
+
 
 class MazeTest(unittest.TestCase):
     def test_remove_wall(self):
