@@ -2,7 +2,6 @@
 # pylint: disable=no-member
 
 import pygame
-
 from life import GameOfLife
 from ui import UI
 
