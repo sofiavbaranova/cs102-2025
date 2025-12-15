@@ -1,4 +1,5 @@
 """Графический интерфейс игры «Жизнь» на pygame."""
+
 # pylint: disable=no-member
 
 import pygame
@@ -8,6 +9,7 @@ from ui import UI
 
 class GUI(UI):
     """Графический интерфейс игры «Жизнь» на pygame."""
+
     def __init__(self, life: GameOfLife, cell_size: int = 10, speed: int = 10) -> None:
         super().__init__(life)
         self.cell_size = cell_size
