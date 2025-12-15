@@ -14,14 +14,11 @@ def is_prime(n: int) -> bool:
     >>> is_prime(8)
     False
     """
-    # Числа меньше 2 — не простые
-    if n < 2:
-        return False
     # 2 и 3 - простые
     if n in (2, 3):
         return True
-    # Чётные числа (кроме 2) не простые
-    if n % 2 == 0:
+    # всё остальное < 2 или чётное — не простое
+    if n < 2 or n % 2 == 0:
         return False
 
     i = 3
